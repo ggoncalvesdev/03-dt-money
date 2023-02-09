@@ -108,16 +108,8 @@ export const TransactionTypeButton = styled(
   }
 
   &[data-state='checked'] {
-    color: ${(props) => props.theme.white};
-    background: ${(props) =>
-      props.variant === 'income'
-        ? props.theme['green-500']
-        : props.theme['red-500']};
-  }
-
-  &[data-state='checked'] {
     &:focus {
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, box-shadow 0.2s;
       color: ${(props) => props.theme.white};
       background: ${(props) =>
         props.variant === 'income'
@@ -131,7 +123,14 @@ export const TransactionTypeButton = styled(
             : props.theme['red-700']};
     }
 
-  svg {
     color: ${(props) => props.theme.white};
+    background: ${(props) =>
+      props.variant === 'income'
+        ? props.theme['green-500']
+        : props.theme['red-500']};
+
+    svg {
+      color: ${(props) => props.theme.white};
+    }
   }
 `
